@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dự đoán bệnh tiểu đường</title>
+</head>
+<body>
+  <h1>Dự đoán bệnh tiểu đường</h1>
+  <form action="/predict" method="post">
+    <label for="gender">Giới tính:</label>
+    <select id="gender" name="gender">
+      <option value=0>Nam</option>
+      <option value=1>Nữ</option>
+    </select>
+
+    <label for="age">Tuổi:</label>
+    <input type="number" id="age" name="age" min="18" max="100">
+
+    <label for="hypertension">Tăng huyết áp:</label>
+    <select id="hypertension" name="hypertension">
+      <option value=1>Có</option>
+      <option value=0>Không</option>
+    </select>
+
+    <label for="heart_disease">Bệnh tim mạch:</label>
+    <select id="heart_disease" name="heart_disease">
+      <option value=1>Có</option>
+      <option value=0>Không</option>
+    </select>
+
+    <label for="smoking_history">Tiền sử hút thuốc:</label>
+    <select id="smoking_history" name="smoking_history">
+      <option value=1>Có</option>
+      <option value=0>Không</option>
+    </select>
+
+    <label for="bmi">BMI:</label>
+    <input type="number" id="bmi" name="bmi">
+
+    <label for="hba1c_level">HbA1c:</label>
+    <input type="number" id="hba1c_level" name="hba1c_level">
+
+    <button type="submit">Dự đoán</button>
+  </form>
+
+  <div id="result">
+    <span id="risk-high" style="color: red;">Kết quả: Có nguy cơ bị tiểu đường</span>
+    <span id="risk-low" style="color: green;">Kết quả: Ít nguy cơ bị tiểu đường</span>
+  </div>
+
+  <script>
+    if (result == 'Có nguy cơ') {
+    document.getElementById('risk-high').style.display = 'block';
+    document.getElementById('risk-low');
+    }
+  </script>
+</body>
+</html>
